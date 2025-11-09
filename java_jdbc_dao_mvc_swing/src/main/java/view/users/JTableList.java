@@ -56,10 +56,55 @@ public class JTableList extends JTable implements UserListener, EventListerner {
 		model.insertRow(0, event.getSource().toArray());
 	}
 
-	@Override
-	public void cmdEdit() {
-		System.out.println(this.getSelectedRow());
-	}
+
+    /**
+     * NOVO MÉTODO: Ouve o evento de atualização do UserController
+     * e atualiza a linha na tabela.
+     */
+    @Override
+    public void userupdated(MailEvent<User> event) {
+        User updatedUser = event.getSource();
+        Long userId = updatedUser.getId();
+
+        for (int i = 0; i < model.getRowCount(); i++) {
+            Long idInTable = Long.parseLong((String) model.getValueAt(i, 0));
+
+            if (idInTable.equals(userId)) {
+                model.setValueAt(updatedUser.getName(), i, 1);
+                model.setValueAt(updatedUser.getLogin(), i, 2);
+                return; // Para o loop
+            }
+        }
+    }
+
+
+    /**
+     * MODIFICADO: Implementa a lógica do botão Editar.
+     */
+    @Override
+    public void cmdEdit() {
+        int row = this.getSelectedRow();
+        if (row == -1) {
+            JOptionPane.showMessageDialog(this, "Por favor, selecione um usuário para editar.", "Aviso", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+
+        // Pega os dados da linha selecionada
+        Long userId = Long.parseLong((String) this.getValueAt(row, 0));
+        String name = (String) this.getValueAt(row, 1);
+        String login = (String) this.getValueAt(row, 2);
+
+        // Cria o objeto User para enviar ao formulário
+        User userToEdit = new User();
+        userToEdit.setId(userId);
+        userToEdit.setName(name);
+        userToEdit.setLogin(login);
+
+        // Abre o formulário NO MODO DE EDIÇÃO
+        // (Você precisará criar este método 'showFormForEdit' no seu Form.java)
+        Form.showFormForEdit(userToEdit);
+    }
+
 
 	@Override
 	public void cmdRemove() {

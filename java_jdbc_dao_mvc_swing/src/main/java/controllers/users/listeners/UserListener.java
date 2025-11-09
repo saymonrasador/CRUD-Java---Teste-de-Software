@@ -6,4 +6,5 @@ import model.User;
 
 public interface UserListener extends EventListener {
 	void useradd(MailEvent<User> event);
+    void userupdated(MailEvent<User> event);
 }

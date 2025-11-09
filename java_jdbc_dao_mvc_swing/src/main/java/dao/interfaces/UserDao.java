@@ -9,7 +9,8 @@ public interface UserDao {
 	
 	User insert(User object) throws SQLException;
 	List<User> all() throws SQLException;
-	int deleteAll() throws SQLException;
+    void update(User user) throws SQLException;
+    int deleteAll() throws SQLException;
 	int delete(User user) throws SQLException;
 	User findByLogin(String login) throws SQLException;
 	User findById(Long id) throws SQLException;

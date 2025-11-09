@@ -22,6 +22,14 @@ public class User {
 		this.name = name;
 		this.login = login;
 	}
+
+    /**
+     * Construtor vazio, necessário para o formulário de edição
+     * e para a lógica do JTableList.
+     */
+    public User() {
+        // Construtor vazio
+    }
 	
 	public Long getId() {
 		return id;
@@ -59,13 +67,25 @@ public class User {
 	}
 	
 	/*  Methods to work with the database **/
-	
-	/**
-	 * Method to save the current user in the database
-	 */
-	public void save() throws SQLException{
-		userDAO().insert(this);
-	}
+
+    /**
+     * Method to save (INSERT or UPDATE) the current user in the database.
+     * If the ID is null, it's an INSERT.
+     * If the ID is NOT null, it's an UPDATE.
+     */
+    public void save() throws SQLException{
+        // Check if the user already has an ID
+        if (this.id == null) {
+            // It's a new user, INSERT it
+            // The insert method returns the User with the new ID
+            User insertedUser = userDAO().insert(this);
+            // We update the ID of this current object
+            this.setId(insertedUser.getId());
+        } else {
+            // It's an existing user, UPDATE it
+            userDAO().update(this);
+        }
+    }
 	
 	/**
 	 * Method to save the current user in the database

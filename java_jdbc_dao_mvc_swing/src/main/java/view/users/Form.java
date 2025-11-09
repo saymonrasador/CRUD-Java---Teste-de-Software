@@ -26,6 +26,8 @@ public class Form extends JDialog{
 	
 	private static Form form = new Form();
 
+    private User userToEdit = null;
+
 	private JTextField jtfName;
 	private JTextField jtfLogin;
 
@@ -44,6 +46,7 @@ public class Form extends JDialog{
 		this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		this.pack();
 		this.setLocationRelativeTo(this.getRootPane());
+        this.setTitle("Formulário de Usuário");
 	}
 	
 	private void createForms(){
@@ -73,7 +76,8 @@ public class Form extends JDialog{
 
 		jpButtons.add(jbSave = new JButton("Salvar"));
 		jpButtons.add(jbCancel = new JButton("Cancelar"));	
-		this.add(jpButtons, BorderLayout.SOUTH);		
+
+		this.add(jpButtons, BorderLayout.SOUTH);		
 	}
 	
 	private void registerListeners() {
@@ -88,18 +92,32 @@ public class Form extends JDialog{
 			}
 		});
 	}
-	
-	private void cmdSave(){
-		try {
-			User user = new User(jtfName.getText(), jtfLogin.getText());
-			UserController.getInstance().save(user);
-			JOptionPane.showMessageDialog(this, "Usuário Salvo Com Sucesso", "", JOptionPane.INFORMATION_MESSAGE);
-			dispose();
-		} catch (SQLException e) {
-			JOptionPane.showMessageDialog(this, e.getMessage(), "Erro", JOptionPane.ERROR_MESSAGE);
-			//e.printStackTrace();
-		}
-	}
+
+    /**
+     * MODIFICADO: Agora este método sabe a diferença entre
+     * criar um novo usuário e atualizar um existente.
+     */
+    private void cmdSave(){
+        try {
+            User user;
+
+            if (userToEdit == null) {
+                user = new User(jtfName.getText(), jtfLogin.getText());
+            } else {
+                user = userToEdit;
+                user.setName(jtfName.getText());
+                user.setLogin(jtfLogin.getText());
+            }
+            UserController.getInstance().save(user);
+
+            JOptionPane.showMessageDialog(this, "Usuário Salvo Com Sucesso", "", JOptionPane.INFORMATION_MESSAGE);
+            dispose();
+
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(this, e.getMessage(), "Erro", JOptionPane.ERROR_MESSAGE);
+            //e.printStackTrace();
+        }
+    }
 	
 	private void cmdCancel(){
 		dispose();
@@ -110,14 +128,50 @@ public class Form extends JDialog{
 			component.setText("");
 		}
 	}
-	
-	@Override
-	public void dispose(){
-		super.dispose();
-		clearForm(jtfName, jtfLogin);
-	}
-	
-	public static void toggle(){
-		form.setVisible(!form.isVisible());
-	}
+
+    /**
+     * MODIFICADO: Limpa o formulário e também reseta o
+     * 'userToEdit', para que o formulário esteja pronto para a próxima vez.
+     */
+    @Override
+    public void dispose(){
+        super.dispose();
+        clearForm(jtfName, jtfLogin);
+        this.userToEdit = null; // Reseta o modo de edição
+    }
+
+    /**
+     * MODIFICADO: Este método (para "Adicionar") agora garante
+     * que o formulário está em modo de criação (userToEdit = null).
+     */
+    public static void toggle(){
+        form.setUserToEdit(null); // Garante que está no modo "Add"
+        form.setVisible(!form.isVisible());
+    }
+
+    /**
+     * NOVO MÉTODO: Chamado pela JTableList para abrir
+     * o formulário no modo de edição.
+     */
+    public static void showFormForEdit(User user) {
+        form.setUserToEdit(user); // Preenche o formulário
+        form.setVisible(true); // Mostra o formulário
+    }
+
+    /**
+     * NOVO MÉTODO (privado): Preenche os campos do formulário
+     * com os dados do usuário a ser editado.
+     */
+    private void setUserToEdit(User user) {
+        this.userToEdit = user;
+
+        if (user != null) {
+            // Modo Edição: Preenche os campos
+            jtfName.setText(user.getName());
+            jtfLogin.setText(user.getLogin());
+        } else {
+            // Modo Adição: Limpa os campos (redundante com o dispose, mas seguro)
+            clearForm(jtfName, jtfLogin);
+        }
+    }
 }

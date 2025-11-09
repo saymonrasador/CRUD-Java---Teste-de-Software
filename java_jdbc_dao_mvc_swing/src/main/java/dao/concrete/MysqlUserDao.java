@@ -36,7 +36,9 @@ public class MysqlUserDao implements UserDao {
 	
 	private static final String 
 	DELETE_ALL = "DELETE FROM users";
-	
+
+    private static final String
+    UPDATE = "UPDATE users SET name = ?, login = ? WHERE id = ?";
 	
 	/**
 	 * Method to insert a user in the database
@@ -87,6 +89,44 @@ public class MysqlUserDao implements UserDao {
 
 		return users;
 	}
+
+
+    /**
+     * ADICIONE ESTE MÉTODO
+     * * Atualiza um usuário existente no banco de dados.
+     */
+    @Override
+    public void update(User user) throws SQLException {
+        Connection c = null; // Usando 'c' para consistência
+        PreparedStatement pstmt = null; // Usando 'pstmt' para consistência
+
+        try {
+            // ESTA É A CORREÇÃO (usando a mesma conexão dos seus outros métodos)
+            c = DaoFactory.getDatabase().openConnection();
+            pstmt = c.prepareStatement(UPDATE); // Usando a constante definida no topo
+
+            // Define os parâmetros do SQL
+            pstmt.setString(1, user.getName());
+            pstmt.setString(2, user.getLogin());
+            pstmt.setLong(3, user.getId()); // Usa setLong porque o ID é Long
+
+            // Executa o comando
+            pstmt.executeUpdate(); // executeUpdate() é mais apropriado aqui
+
+        } catch (SQLException e) {
+            // Re-lança a exceção para a camada superior (Controller) tratar
+            throw new SQLException("Erro ao atualizar usuário: " + e.getMessage(), e);
+        } finally {
+            // Fecha o PreparedStatement e a Conexão
+            if (pstmt != null) {
+                pstmt.close();
+            }
+            if (c != null) {
+                c.close();
+            }
+        }
+    }
+
 
 	/**
 	 * Method to delete all users in the database
