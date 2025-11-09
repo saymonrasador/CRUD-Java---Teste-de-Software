@@ -13,9 +13,9 @@ import controllers.users.listeners.MailEvent;
 import controllers.users.listeners.UserListener;
 
 public class JTableList extends JTable implements UserListener, EventListerner {
-	
+
 	private static final long serialVersionUID = 1L;
-	
+
 	private TableModel model = new TableModel();
 
 	public JTableList() {
@@ -24,8 +24,8 @@ public class JTableList extends JTable implements UserListener, EventListerner {
 		UserController.getInstance().addUserListener(this);
 		loadUsers();
 	}
-	
-	public void loadUsers(){
+
+	public void loadUsers() {
 		try {
 			for (User user : UserController.getInstance().allUsers()) {
 				model.insertRow(0, user.toArray());
@@ -35,21 +35,20 @@ public class JTableList extends JTable implements UserListener, EventListerner {
 			e.printStackTrace();
 		}
 	}
-	
-	
-	private class TableModel extends DefaultTableModel{
-		
+
+	private class TableModel extends DefaultTableModel {
+
 		private static final long serialVersionUID = 1L;
-		
+
 		public TableModel() {
-			super(new Object[][]{}, new String[] {"id", "Nome", "login"});	 
+			super(new Object[][] {}, new String[] { "id", "Nome", "login" });
 		}
-		
+
 		@Override
 		public boolean isCellEditable(int row, int column) {
 			return false;
 		}
-		
+
 	}
 
 	@Override
@@ -75,12 +74,12 @@ public class JTableList extends JTable implements UserListener, EventListerner {
 			}
 		}
 	}
-	
+
 	@Override
 	public void cmdDetails() {
 		System.out.println(this.getSelectedRow());
 	}
-	
+
 	@Override
 	public void cmdAdd() {
 		Form.toggle();
