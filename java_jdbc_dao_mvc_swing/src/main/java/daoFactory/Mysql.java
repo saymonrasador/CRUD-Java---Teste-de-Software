@@ -9,11 +9,14 @@ import dao.interfaces.UserDao;
 
 public class Mysql extends DaoFactory {
 
-	private static String url = "jdbc:mysql://127.0.0.1:3306/";
-	private static String database = "mailsystem";
+	private static String host = System.getenv().getOrDefault("MYSQL_HOST", "127.0.0.1");
+	private static String port = System.getenv().getOrDefault("MYSQL_PORT", "3306");
+	private static String database = System.getenv().getOrDefault("MYSQL_DATABASE", "mailsystem");
+	private static String user = System.getenv().getOrDefault("MYSQL_USER", "root");
+	private static String password = System.getenv().getOrDefault("MYSQL_PASSWORD", "@GSkpx87");
+	
 	private static String driver = "com.mysql.cj.jdbc.Driver";
-	private static String user = "root";
-	private static String password = "@GSkpx87";
+	private static String url = "jdbc:mysql://" + host + ":" + port + "/";
 
 	public Connection openConnection() {
 		try {

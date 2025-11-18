@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="performance.PerformanceTest" time="114.641" tests="5" errors="0" skipped="0" failures="0">
+  <properties>
+    <property name="java.specification.version" value="21"/>
+    <property name="sun.jnu.encoding" value="UTF-8"/>
+    <property name="java.class.path" value="/home/tutuacs/Desktop/CRUD-Java---Teste-de-Software/java_jdbc_dao_mvc_swing/target/test-classes:/home/tutuacs/Desktop/CRUD-Java---Teste-de-Software/java_jdbc_dao_mvc_swing/target/classes:/home/tutuacs/.m2/repository/org/junit/jupiter/junit-jupiter/5.10.2/junit-jupiter-5.10.2.jar:/home/tutuacs/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.10.2/junit-jupiter-api-5.10.2.jar:/home/tutuacs/.m2/repository/org/opentest4j/opentest4j/1.3.0/opentest4j-1.3.0.jar:/home/tutuacs/.m2/repository/org/junit/platform/junit-platform-commons/1.10.2/junit-platform-commons-1.10.2.jar:/home/tutuacs/.m2/repository/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.jar:/home/tutuacs/.m2/repository/org/junit/jupiter/junit-jupiter-params/5.10.2/junit-jupiter-params-5.10.2.jar:/home/tutuacs/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.10.2/junit-jupiter-engine-5.10.2.jar:/home/tutuacs/.m2/repository/org/junit/platform/junit-platform-engine/1.10.2/junit-platform-engine-1.10.2.jar:/home/tutuacs/.m2/repository/com/mysql/mysql-connector-j/8.0.33/mysql-connector-j-8.0.33.jar:/home/tutuacs/.m2/repository/com/google/protobuf/protobuf-java/3.21.9/protobuf-java-3.21.9.jar:"/>
+    <property name="java.vm.vendor" value="Ubuntu"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="java.vendor.url" value="https://ubuntu.com/"/>
+    <property name="user.timezone" value="America/Sao_Paulo"/>
+    <property name="os.name" value="Linux"/>
+    <property name="java.vm.specification.version" value="21"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="user.country" value="US"/>
+    <property name="sun.boot.library.path" value="/usr/lib/jvm/java-21-openjdk-amd64/lib"/>
+    <property name="sun.java.command" value="/home/tutuacs/Desktop/CRUD-Java---Teste-de-Software/java_jdbc_dao_mvc_swing/target/surefire/surefirebooter-20251117224511256_3.jar /home/tutuacs/Desktop/CRUD-Java---Teste-de-Software/java_jdbc_dao_mvc_swing/target/surefire 2025-11-17T22-45-11_192-jvmRun1 surefire-20251117224511256_1tmp surefire_0-20251117224511256_2tmp"/>
+    <property name="jdk.debug" value="release"/>
+    <property name="test" value="PerformanceTest"/>
+    <property name="surefire.test.class.path" value="/home/tutuacs/Desktop/CRUD-Java---Teste-de-Software/java_jdbc_dao_mvc_swing/target/test-classes:/home/tutuacs/Desktop/CRUD-Java---Teste-de-Software/java_jdbc_dao_mvc_swing/target/classes:/home/tutuacs/.m2/repository/org/junit/jupiter/junit-jupiter/5.10.2/junit-jupiter-5.10.2.jar:/home/tutuacs/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.10.2/junit-jupiter-api-5.10.2.jar:/home/tutuacs/.m2/repository/org/opentest4j/opentest4j/1.3.0/opentest4j-1.3.0.jar:/home/tutuacs/.m2/repository/org/junit/platform/junit-platform-commons/1.10.2/junit-platform-commons-1.10.2.jar:/home/tutuacs/.m2/repository/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.jar:/home/tutuacs/.m2/repository/org/junit/jupiter/junit-jupiter-params/5.10.2/junit-jupiter-params-5.10.2.jar:/home/tutuacs/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.10.2/junit-jupiter-engine-5.10.2.jar:/home/tutuacs/.m2/repository/org/junit/platform/junit-platform-engine/1.10.2/junit-platform-engine-1.10.2.jar:/home/tutuacs/.m2/repository/com/mysql/mysql-connector-j/8.0.33/mysql-connector-j-8.0.33.jar:/home/tutuacs/.m2/repository/com/google/protobuf/protobuf-java/3.21.9/protobuf-java-3.21.9.jar:"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="user.home" value="/home/tutuacs"/>
+    <property name="user.language" value="en"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.version.date" value="2025-07-15"/>
+    <property name="java.home" value="/usr/lib/jvm/java-21-openjdk-amd64"/>
+    <property name="file.separator" value="/"/>
+    <property name="basedir" value="/home/tutuacs/Desktop/CRUD-Java---Teste-de-Software/java_jdbc_dao_mvc_swing"/>
+    <property name="java.vm.compressedOopsMode" value="Zero based"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="surefire.real.class.path" value="/home/tutuacs/Desktop/CRUD-Java---Teste-de-Software/java_jdbc_dao_mvc_swing/target/surefire/surefirebooter-20251117224511256_3.jar"/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="java.runtime.version" value="21.0.8+9-Ubuntu-0ubuntu124.04.1"/>
+    <property name="user.name" value="tutuacs"/>
+    <property name="stdout.encoding" value="UTF-8"/>
+    <property name="path.separator" value=":"/>
+    <property name="os.version" value="6.14.0-35-generic"/>
+    <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="java.vm.name" value="OpenJDK 64-Bit Server VM"/>
+    <property name="localRepository" value="/home/tutuacs/.m2/repository"/>
+    <property name="java.vendor.url.bug" value="https://bugs.launchpad.net/ubuntu/+source/openjdk-21"/>
+    <property name="java.io.tmpdir" value="/tmp"/>
+    <property name="java.version" value="21.0.8"/>
+    <property name="user.dir" value="/home/tutuacs/Desktop/CRUD-Java---Teste-de-Software/java_jdbc_dao_mvc_swing"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="native.encoding" value="UTF-8"/>
+    <property name="java.library.path" value="/usr/java/packages/lib:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib"/>
+    <property name="java.vm.info" value="mixed mode, sharing"/>
+    <property name="stderr.encoding" value="UTF-8"/>
+    <property name="java.vendor" value="Ubuntu"/>
+    <property name="java.vm.version" value="21.0.8+9-Ubuntu-0ubuntu124.04.1"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="java.class.version" value="65.0"/>
+  </properties>
+  <testcase name="testInsert5000Users" classname="performance.PerformanceTest" time="92.666">
+    <system-out><![CDATA[=== INICIANDO TESTES DE DESEMPENHO ===
+Limpando banco de dados...
+Banco limpo com sucesso!
+
+
+--- TESTE 1: INSERÇÃO EM MASSA ---
+Inserindo 5000 usuários...
+  [OK] 1000 usuários inseridos (18741 ms)
+  [OK] 2000 usuários inseridos (37286 ms)
+  [OK] 3000 usuários inseridos (55963 ms)
+  [OK] 4000 usuários inseridos (74230 ms)
+  [OK] 5000 usuários inseridos (92634 ms)
+
+RESULTADOS DA INSERÇÃO:
+  • Total de usuários: 5000
+  • Tempo total: 92.63 segundos (92634 ms)
+  • Tempo médio por usuário: 18.53 ms
+  • Taxa de inserção: 53.98 usuários/segundo
+  • Limite aceitável: 30.00 segundos (30000 ms)
+  [AVISO] DESEMPENHO ABAIXO DO ESPERADO!
+]]></system-out>
+  </testcase>
+  <testcase name="testLoad5000Users" classname="performance.PerformanceTest" time="0.016">
+    <system-out><![CDATA[
+--- TESTE 2: CARREGAMENTO EM MASSA ---
+Carregando 5000 usuários do banco...
+
+RESULTADOS DO CARREGAMENTO:
+  • Total de usuários carregados: 5000
+  • Tempo total: 11 ms (0.011 segundos)
+  • Tempo por usuário: 0.00 ms
+  • Limite aceitável: 5000 ms
+  [OK] DESEMPENHO ACEITÁVEL!
+]]></system-out>
+  </testcase>
+  <testcase name="testFindUserById" classname="performance.PerformanceTest" time="0.036">
+    <system-out><![CDATA[
+--- TESTE 3: BUSCA POR ID ---
+  • Busca ID 4: 6 ms
+  • Busca ID 1254: 7 ms
+  • Busca ID 2504: 6 ms
+  • Busca ID 3754: 5 ms
+]]></system-out>
+  </testcase>
+  <testcase name="testUpdate1000Users" classname="performance.PerformanceTest" time="21.508">
+    <system-out><![CDATA[
+--- TESTE 4: ATUALIZAÇÃO EM MASSA ---
+Atualizando 1.000 usuários...
+  [OK] 250 usuários atualizados
+  [OK] 500 usuários atualizados
+  [OK] 750 usuários atualizados
+  [OK] 1000 usuários atualizados
+
+RESULTADOS DA ATUALIZAÇÃO:
+  • Total de usuários atualizados: 1.000
+  • Tempo total: 21501 ms (21.501 segundos)
+  • Tempo por usuário: 21.50 ms
+]]></system-out>
+  </testcase>
+  <testcase name="testDeleteAllUsers" classname="performance.PerformanceTest" time="0.058">
+    <system-out><![CDATA[
+--- TESTE 5: DELEÇÃO EM MASSA ---
+Deletando todos os 5000 usuários...
+
+RESULTADOS DA DELEÇÃO:
+  • Total de usuários deletados: 5000
+  • Tempo total: 51 ms (0.051 segundos)
+  [OK] TODOS OS USUÁRIOS FORAM DELETADOS!
+]]></system-out>
+  </testcase>
+</testsuite>
