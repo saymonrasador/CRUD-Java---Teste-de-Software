@@ -6,23 +6,19 @@
   <component name="ChangeListManager">
     <list default="true" id="d13bb844-d689-41b0-a815-9c07e71816c5" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/users/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/users/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/users/listeners/UserListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/users/listeners/UserListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dao/concrete/MysqlUserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/concrete/MysqlUserDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dao/interfaces/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/interfaces/UserDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view/users/Form.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/users/Form.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view/users/JTableList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/users/JTableList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/daoFactory/Mysql.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/daoFactory/Mysql.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/sql/bd.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/sql/bd.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/model/UserTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/model/UserTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/controllers/users/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controllers/users/UserController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/controllers/users/listeners/UserListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controllers/users/listeners/UserListener.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/dao/concrete/MysqlUserDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dao/concrete/MysqlUserDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/dao/interfaces/UserDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dao/interfaces/UserDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/daoFactory/Mysql.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/daoFactory/Mysql.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/model/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/User.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/view/users/Form$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/users/Form$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/view/users/Form$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/users/Form$2.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/view/users/Form.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/users/Form.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/view/users/JTableList$TableModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/users/JTableList$TableModel.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/view/users/JTableList.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/users/JTableList.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/model/UserTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/model/UserTest.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,29 +28,42 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 3
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 3
+}</component>
   <component name="ProjectId" id="35FlXIsCGgNE8wsmIU7imbCAlEn" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.Main.executor": "Run",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "main",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/saymo/Desktop/Projeto 4 Java/java_jdbc_dao_mvc_swing/pom.xml",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.MysqlUserDaoTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.MysqlUserDaoTest.testAll.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.MysqlUserDaoTest.testDelete.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.MysqlUserDaoTest.testInsertAndFindById.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.MysqlUserDaoTest.testUpdate.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.UserTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.UserTest.testCreateUserAndGetters.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.UserTest.testSetters.executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/saymo/Desktop/Projeto 4 Java/java_jdbc_dao_mvc_swing/pom.xml&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
   }
-}]]></component>
-  <component name="RunManager">
+}</component>
+  <component name="RecentsManager">
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="dao.concrete" />
+    </key>
+  </component>
+  <component name="RunManager" selected="JUnit.MysqlUserDaoTest">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="main.Main" />
       <module name="java-jdbc-dao-mvc-swing" />
@@ -68,9 +77,75 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="MysqlUserDaoTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="java-jdbc-dao-mvc-swing" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="dao.concrete.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="dao.concrete" />
+      <option name="MAIN_CLASS_NAME" value="dao.concrete.MysqlUserDaoTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MysqlUserDaoTest.testAll" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="java-jdbc-dao-mvc-swing" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="dao.concrete.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="dao.concrete" />
+      <option name="MAIN_CLASS_NAME" value="dao.concrete.MysqlUserDaoTest" />
+      <option name="METHOD_NAME" value="testAll" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MysqlUserDaoTest.testDelete" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="java-jdbc-dao-mvc-swing" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="dao.concrete.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="dao.concrete" />
+      <option name="MAIN_CLASS_NAME" value="dao.concrete.MysqlUserDaoTest" />
+      <option name="METHOD_NAME" value="testDelete" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="java-jdbc-dao-mvc-swing" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="model.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="model" />
+      <option name="MAIN_CLASS_NAME" value="model.UserTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.MysqlUserDaoTest" />
+        <item itemvalue="JUnit.UserTest" />
+        <item itemvalue="JUnit.MysqlUserDaoTest.testDelete" />
         <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.MysqlUserDaoTest.testAll" />
       </list>
     </recent_temporary>
   </component>

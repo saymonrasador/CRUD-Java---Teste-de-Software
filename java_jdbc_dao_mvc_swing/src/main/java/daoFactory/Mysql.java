@@ -9,7 +9,8 @@ import dao.interfaces.UserDao;
 
 public class Mysql extends DaoFactory {
 
-	private static String url = "jdbc:mysql://127.0.0.1:3306/";
+	//private static String url = "jdbc:mysql://127.0.0.1:3306/";   // Banco  de dados oficial
+    String url = "jdbc:mysql://localhost:3306/java_mvc_test_db";    //Banco de dados teste
 	private static String database = "mailsystem";
 	private static String driver = "com.mysql.cj.jdbc.Driver";
 	private static String user = "root";
@@ -18,8 +19,8 @@ public class Mysql extends DaoFactory {
 	public Connection openConnection() {
 		try {
 			Class.forName(driver);
-			Connection connection = DriverManager.getConnection(url + database, user, password);
-			return connection;
+            Connection connection = DriverManager.getConnection(url, user, password);
+            return connection;
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} catch (Exception ex) {
