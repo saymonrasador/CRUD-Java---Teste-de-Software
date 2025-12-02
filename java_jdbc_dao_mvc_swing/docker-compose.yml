@@ -1,0 +1,45 @@
+services:
+  # Banco de dados MySQL para testes
+  mysql:
+    image: mysql:8.0
+    container_name: crud-java-mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+    ports:
+      - "${EXTERNAL_MYSQL_PORT}:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "root", "-p${MYSQL_ROOT_PASSWORD}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - crud-network
+
+  # PhpMyAdmin (opcional - interface web para gerenciar o banco)
+  phpmyadmin:
+    image: phpmyadmin:latest
+    container_name: crud-java-phpmyadmin
+    environment:
+      PMA_HOST: mysql
+      PMA_PORT: 3306
+      PMA_USER: ${MYSQL_USER}
+      PMA_PASSWORD: ${MYSQL_PASSWORD}
+    ports:
+      - "${PHPMYADMIN_PORT}:80"
+    depends_on:
+      mysql:
+        condition: service_healthy
+    networks:
+      - crud-network
+
+volumes:
+  mysql_data:
+    driver: local
+
+networks:
+  crud-network:
+    driver: bridge

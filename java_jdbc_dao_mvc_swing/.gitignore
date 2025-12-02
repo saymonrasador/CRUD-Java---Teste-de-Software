@@ -67,3 +67,5 @@ tmp/*
 **.swp
 .*.sw[op]
 .sw[op]
+
+.env
